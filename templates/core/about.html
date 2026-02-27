@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About | Surendra Mahla{% endblock %}
+
+{% block content %}
+
+<section class="about-section section-padding">
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="about-header text-center">
+            <h1 class="section-title">
+                About <span class="gradient-text">Me</span>
+            </h1>
+        </div>
+
+        <!-- CONTENT GRID -->
+        <div class="about-grid">
+
+            <!-- LEFT: IMAGE -->
+            <div class="about-image-container">
+                <div class="about-image">
+                    <img src="{% static 'images/profile.jpg' %}" alt="Surendra Mahla" class="profile-img">
+                </div>
+            </div>
+
+            <!-- RIGHT: TEXT -->
+            <div class="about-content">
+
+                <h2 class="about-role">
+                    Data-Driven Software Engineer
+                </h2>
+
+                <p>
+                    I am a B.Tech Computer Science student passionate about
+                    Data Science, Machine Learning, and Full Stack Development.
+                    I specialize in building intelligent systems and scalable
+                    web applications using Python, Django, and modern tools.
+                </p>
+
+                <p>
+                    My work includes developing predictive machine learning models,
+                    database-integrated applications, and interactive dashboards
+                    that transform raw data into actionable business insights.
+                </p>
+
+                <p>
+                    I continuously explore new technologies, participate in
+                    technical events, and refine my problem-solving skills
+                    to grow as a modern software engineer.
+                </p>
+
+                <!-- STATS -->
+                <div class="about-stats">
+
+                    <div class="stat-item">
+                        <h3>7+</h3>
+                        <span>Projects Completed</span>
+                    </div>
+
+                    <div class="stat-item">
+                        <h3>5+</h3>
+                        <span>Core Technologies</span>
+                    </div>
+
+                    <div class="stat-item">
+                        <h3>3+</h3>
+                        <span>Technical Domains</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

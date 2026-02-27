@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Blog | Surendra Mahla{% endblock %}
+
+{% block content %}
+<section class="blog-section section">
+    <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-title text-center">
+            <h2>My <span class="accent">Blog</span></h2>
+            <p>Technical articles, insights, and development learnings.</p>
+        </div>
+
+        <div class="blog-grid">
+
+            {% for post in posts %}
+            <div class="blog-card">
+
+                <!-- Image -->
+                {% if post.image %}
+                <div class="blog-image">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                </div>
+                {% endif %}
+
+                <!-- Content -->
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <i class="fas fa-calendar-alt"></i>
+                        {{ post.created_at|date:"F d, Y" }}
+                    </div>
+
+                    <h3 class="blog-title">
+                        <a href="{% url 'blog:post_detail' post.slug %}">
+                            {{ post.title }}
+                        </a>
+                    </h3>
+
+                    <p class="blog-excerpt">
+                        {{ post.content|truncatewords:25 }}
+                    </p>
+
+                    <a href="{% url 'blog:post_detail' post.slug %}" class="btn btn-outline btn-sm">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+            {% empty %}
+            <div class="no-posts text-center">
+                <p>No blog posts available yet. Stay tuned!</p>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .blog-card {
+        background: var(--card-bg);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: 0.3s ease;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .blog-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .blog-content {
+        padding: 1.5rem;
+    }
+
+    .blog-meta {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        margin-bottom: 0.5rem;
+    }
+
+    .blog-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .blog-title a {
+        text-decoration: none;
+        color: var(--text-primary);
+    }
+
+    .blog-title a:hover {
+        color: var(--accent);
+    }
+
+    .blog-excerpt {
+        color: var(--text-secondary);
+        margin-bottom: 1.2rem;
+    }
+
+    .btn-sm {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+</style>
+
+{% endblock %}

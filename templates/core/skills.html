@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+
+{% block title %}Skills | Surendra Mahla{% endblock %}
+
+{% block content %}
+
+<section class="skills-section">
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="skills-header">
+            <h1>
+                My <span class="gradient-text">Technical Skills</span>
+            </h1>
+
+            <p>
+                Technologies and tools I use to engineer scalable,
+                intelligent digital systems.
+            </p>
+        </div>
+
+        <!-- GRID -->
+        <div class="skills-grid">
+
+            <!-- Python -->
+            <div class="skill-card">
+                <i class="fab fa-python python"></i>
+                <h4>Python</h4>
+            </div>
+
+            <!-- Java -->
+            <div class="skill-card">
+                <i class="fab fa-java java"></i>
+                <h4>Java</h4>
+            </div>
+
+            <!-- C++ -->
+            <div class="skill-card">
+                <i class="fas fa-code cpp"></i>
+                <h4>C / C++</h4>
+            </div>
+
+            <!-- JS -->
+            <div class="skill-card">
+                <i class="fab fa-js js"></i>
+                <h4>JavaScript</h4>
+            </div>
+
+            <!-- Django -->
+            <div class="skill-card">
+                <i class="fas fa-server django"></i>
+                <h4>Django</h4>
+            </div>
+
+            <!-- Flask -->
+            <div class="skill-card">
+                <i class="fas fa-flask flask"></i>
+                <h4>Flask</h4>
+            </div>
+
+            <!-- Pandas -->
+            <div class="skill-card">
+                <i class="fas fa-chart-line pandas"></i>
+                <h4>Pandas</h4>
+            </div>
+
+            <!-- Scikit -->
+            <div class="skill-card">
+                <i class="fas fa-brain sklearn"></i>
+                <h4>Scikit-learn</h4>
+            </div>
+
+            <!-- MySQL -->
+            <div class="skill-card">
+                <i class="fas fa-database mysql"></i>
+                <h4>MySQL</h4>
+            </div>
+
+            <!-- Power BI -->
+            <div class="skill-card">
+                <i class="fas fa-chart-bar powerbi"></i>
+                <h4>Power BI</h4>
+            </div>
+
+            <!-- HTML -->
+            <div class="skill-card">
+                <i class="fab fa-html5 html"></i>
+                <h4>HTML</h4>
+            </div>
+
+            <!-- CSS -->
+            <div class="skill-card">
+                <i class="fab fa-css3-alt css"></i>
+                <h4>CSS</h4>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+    /* ===== SECTION ===== */
+    .skills-section {
+        padding: 100px 0;
+        background: radial-gradient(circle at 20% 20%,
+                rgba(99, 102, 241, 0.15),
+                transparent 40%);
+    }
+
+    .skills-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .skills-header h1 {
+        font-size: 2.6rem;
+        margin-bottom: 15px;
+    }
+
+    .skills-header p {
+        max-width: 600px;
+        margin: auto;
+        color: var(--text-secondary);
+    }
+
+    /* ===== GRID ===== */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 35px;
+    }
+
+    /* ===== CARD ===== */
+    .skill-card {
+        text-align: center;
+        padding: 40px 20px;
+        border-radius: 18px;
+        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: 0.4s ease;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    /* ===== ICON BASE ===== */
+    .skill-card i {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        transition: 0.3s ease;
+    }
+
+    /* ===== BRAND COLORS ===== */
+    .python {
+        color: #3776AB;
+    }
+
+    .java {
+        color: #f89820;
+    }
+
+    .cpp {
+        color: #00599C;
+    }
+
+    .js {
+        color: #f7df1e;
+    }
+
+    .django {
+        color: #0C4B33;
+    }
+
+    .flask {
+        color: #ffffff;
+    }
+
+    .pandas {
+        color: #150458;
+    }
+
+    .sklearn {
+        color: #f7931e;
+    }
+
+    .mysql {
+        color: #00758F;
+    }
+
+    .powerbi {
+        color: #f2c811;
+    }
+
+    .html {
+        color: #e34f26;
+    }
+
+    .css {
+        color: #264de4;
+    }
+
+    /* Glow on hover */
+    .skill-card:hover i {
+        filter: drop-shadow(0 0 12px currentColor);
+    }
+
+    /* Gradient text */
+    .gradient-text {
+        background: linear-gradient(90deg, #7c3aed, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
+
+{% endblock %}

@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Surendra Mahla | Portfolio{% endblock %}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="dark-theme">
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="container header-inner">
+
+            <!-- Logo -->
+            <a href="{% url 'core:home' %}" class="logo">
+                Portfolio<span class="accent">.</span>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="nav-menu">
+                <a href="{% url 'core:home' %}" class="nav-link">Home</a>
+                <a href="{% url 'core:about' %}" class="nav-link">About</a>
+                <a href="{% url 'core:skills' %}" class="nav-link">Skills</a>
+                <a href="{% url 'core:projects' %}" class="nav-link">Projects</a>
+                <a href="{% url 'core:experience' %}" class="nav-link">Experience</a>
+                <a href="{% url 'blog:post_list' %}" class="nav-link">Blog</a>
+
+                <!-- Social Icons -->
+                <a href="https://github.com/surendramahla" target="_blank" class="nav-icon">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/surendramahla/" target="_blank" class="nav-icon">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <!-- CTA -->
+                <a href="{% url 'core:contact' %}" class="btn btn-primary nav-cta">
+                    Let's Talk
+                </a>
+            </nav>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        {% if messages %}
+        <div class="messages-container container">
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+                <h2>Surendra Mahla</h2>
+                <p>
+                    Data-Driven Software Engineer | Machine Learning & Full Stack Developer
+                </p>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://github.com/surendramahla" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/surendramahla/" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; {% now "Y" %} Surendra Mahla. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+
+</html>

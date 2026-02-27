@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | Surendra Mahla{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="container hero-inner">
+
+        <!-- HEADLINE -->
+        <h1 class="hero-title">
+            Hi, I'm
+            <span class="gradient-text">Surendra Mahla</span>
+        </h1>
+
+        <!-- ROLE -->
+        <h2 class="hero-role">
+            Data-Driven Software Engineer
+        </h2>
+
+        <!-- DESCRIPTION -->
+        <p class="hero-description">
+            I build intelligent systems combining Machine Learning,
+            Data Analytics, and scalable Full Stack applications —
+            transforming raw data into meaningful digital experiences.
+        </p>
+
+        <!-- ACTION BUTTONS -->
+        <div class="hero-actions">
+            <a href="{% url 'core:projects' %}" class="btn btn-primary premium-btn">
+                Explore My Work
+            </a>
+
+            <a href="{% url 'core:contact' %}" class="btn btn-outline premium-outline">
+                Contact Me
+            </a>
+        </div>
+
+        <!-- SOCIAL LINKS -->
+        <div class="hero-social">
+            <a href="https://github.com/surendramahla" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/surendramahla/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+
+        <!-- STATS -->
+        <div class="hero-stats">
+            <div>
+                <h3>7+</h3>
+                <p>Projects Built</p>
+            </div>
+
+            <div>
+                <h3>5+</h3>
+                <p>Core Technologies</p>
+            </div>
+
+            <div>
+                <h3>3+</h3>
+                <p>Domains</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+    /* ===== HERO BACKGROUND ===== */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        background: radial-gradient(circle at 50% 20%,
+                rgba(99, 102, 241, 0.18),
+                transparent 45%);
+        padding: 80px 0;
+    }
+
+    .hero-inner {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    /* ===== TITLE ===== */
+    .hero-title {
+        font-size: 3.8rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .gradient-text {
+        background: linear-gradient(90deg, #7c3aed, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* ===== ROLE ===== */
+    .hero-role {
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+        color: var(--text-secondary);
+    }
+
+    /* ===== DESCRIPTION ===== */
+    .hero-description {
+        max-width: 650px;
+        margin: auto;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        margin-bottom: 2.5rem;
+    }
+
+    /* ===== BUTTONS ===== */
+    .hero-actions {
+        margin-bottom: 2rem;
+    }
+
+    .premium-btn {
+        padding: 12px 28px;
+        border-radius: 30px;
+        background: linear-gradient(90deg, #7c3aed, #3b82f6);
+        border: none;
+        margin-right: 15px;
+        transition: 0.3s ease;
+    }
+
+    .premium-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+    }
+
+    .premium-outline {
+        padding: 12px 28px;
+        border-radius: 30px;
+    }
+
+    /* ===== SOCIAL ===== */
+    .hero-social a {
+        font-size: 1.6rem;
+        margin: 0 15px;
+        color: var(--text-primary);
+        transition: 0.3s ease;
+    }
+
+    .hero-social a:hover {
+        color: var(--accent);
+        transform: translateY(-3px);
+    }
+
+    /* ===== STATS ===== */
+    .hero-stats {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        flex-wrap: wrap;
+    }
+
+    .hero-stats h3 {
+        font-size: 1.6rem;
+    }
+
+    .hero-stats p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+    }
+</style>
+
+{% endblock %}

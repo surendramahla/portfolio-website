@@ -1,0 +1,256 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact | Surendra Mahla{% endblock %}
+
+{% block content %}
+
+<section class="contact-section">
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="contact-header">
+            <h1>
+                Let’s <span class="gradient-text">Connect</span>
+            </h1>
+            <p>
+                Open to collaborations, freelance projects, and exciting opportunities.
+                Feel free to reach out.
+            </p>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="contact-grid">
+
+            <!-- LEFT PANEL -->
+            <div class="contact-info-card">
+
+                <h3>Contact Information</h3>
+
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <span>Location</span>
+                        <p>Kuchaman, Nagaur, Rajasthan, India</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <span>Email</span>
+                        <p>surendramahla087@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <span>Phone</span>
+                        <p>+91 9462916907</p>
+                    </div>
+                </div>
+
+                <div class="contact-social">
+                    <a href="https://github.com/surendramahla" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/surendramahla/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- RIGHT PANEL -->
+            <div class="contact-form-card">
+
+                <form method="post" action="{% url 'core:contact' %}">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        {{ form.name }}
+                        {% if form.name.errors %}
+                        <span class="error-text">{{ form.name.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                        <span class="error-text">{{ form.email.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.subject }}
+                        {% if form.subject.errors %}
+                        <span class="error-text">{{ form.subject.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.message }}
+                        {% if form.message.errors %}
+                        <span class="error-text">{{ form.message.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Send Message →
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+    /* SECTION */
+    .contact-section {
+        padding: 120px 0;
+        background: radial-gradient(circle at top left,
+                rgba(99, 102, 241, 0.18),
+                transparent 40%);
+    }
+
+    /* HEADER */
+    .contact-header {
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    .contact-header h1 {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+    }
+
+    .contact-header p {
+        max-width: 600px;
+        margin: auto;
+        color: var(--text-secondary);
+    }
+
+    /* GRID */
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 50px;
+    }
+
+    /* INFO CARD */
+    .contact-info-card {
+        padding: 40px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+    }
+
+    .contact-info-card h3 {
+        margin-bottom: 30px;
+    }
+
+    .info-item {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .info-item i {
+        font-size: 1.2rem;
+        color: var(--accent);
+    }
+
+    .info-item span {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+    }
+
+    .contact-social {
+        margin-top: 30px;
+    }
+
+    .contact-social a {
+        font-size: 1.4rem;
+        margin-right: 15px;
+        transition: 0.3s ease;
+    }
+
+    .contact-social a:hover {
+        color: var(--accent);
+    }
+
+    /* FORM CARD */
+    .contact-form-card {
+        padding: 40px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+    }
+
+    /* FORM INPUTS */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 14px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.02);
+        color: var(--text-primary);
+        transition: 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: var(--accent);
+        outline: none;
+        box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+    }
+
+    /* BUTTON */
+    .submit-btn {
+        width: 100%;
+        padding: 14px;
+        border-radius: 30px;
+        background: linear-gradient(90deg, #7c3aed, #3b82f6);
+        border: none;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+    }
+
+    /* GRADIENT TEXT */
+    .gradient-text {
+        background: linear-gradient(90deg, #7c3aed, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 900px) {
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+{% endblock %}

@@ -1,0 +1,291 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Projects | Surendra Mahla{% endblock %}
+
+{% block content %}
+
+<section class="projects-section section-padding">
+
+    <div class="container">
+
+        <!-- ================= HEADER ================= -->
+        <div class="projects-header">
+            <h1 class="section-title">
+                Featured <span class="gradient-text">Projects</span>
+            </h1>
+
+            <p class="projects-subtitle">
+                Engineering intelligent systems, scalable applications,
+                and data-driven solutions across ML, Web, Java, and Data Analytics.
+            </p>
+        </div>
+
+
+        <!-- ================= PROJECT GRID ================= -->
+        <div class="projects-grid">
+
+            <!-- 🔥 FEATURED PROJECT -->
+            <div class="project-card featured">
+                <div class="project-top">
+                    <span class="featured-badge">Featured</span>
+                    <i class="fas fa-chart-line project-icon"></i>
+                </div>
+
+                <h3>Bank Marketing Deposit Prediction</h3>
+
+                <p>
+                    End-to-end machine learning pipeline predicting term deposit
+                    subscriptions using feature engineering and multiple
+                    classification models.
+                </p>
+
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>Scikit-learn</span>
+                    <span>Pandas</span>
+                    <span>EDA</span>
+                </div>
+
+                <a href="https://github.com/surendramahla/Bank-Marketing-Deposit-Subscription-Prediction"
+                    target="_blank" class="project-link">
+                    View on GitHub →
+                </a>
+            </div>
+
+
+            <!-- Django Blog -->
+            <div class="project-card">
+                <i class="fas fa-blog project-icon"></i>
+
+                <h3>Django Blog Platform</h3>
+
+                <p>
+                    Full-stack blogging platform with authentication,
+                    admin dashboard, markdown support, and comment system.
+                </p>
+
+                <div class="tech-stack">
+                    <span>Django</span>
+                    <span>Python</span>
+                    <span>SQLite</span>
+                </div>
+
+                <a href="https://github.com/surendramahla/Django-Blog-Modern-Full-Stack-Blogging-Platform"
+                    target="_blank" class="project-link">
+                    View on GitHub →
+                </a>
+            </div>
+
+
+            <!-- Airline Management -->
+            <div class="project-card">
+                <i class="fas fa-plane project-icon"></i>
+
+                <h3>Airline Management System</h3>
+
+                <p>
+                    Desktop booking system built using Java Swing
+                    integrated with MySQL and secure authentication.
+                </p>
+
+                <div class="tech-stack">
+                    <span>Java</span>
+                    <span>Swing</span>
+                    <span>MySQL</span>
+                </div>
+
+                <a href="https://github.com/surendramahla/Airline-Management-System" target="_blank"
+                    class="project-link">
+                    View on GitHub →
+                </a>
+            </div>
+
+
+            <!-- Flask Todo -->
+            <div class="project-card">
+                <i class="fas fa-check-circle project-icon"></i>
+
+                <h3>Flask Todo App with Image Upload</h3>
+
+                <p>
+                    A functional Todo web application built using Flask and SQLite.
+                    Users can create tasks, add descriptions, and securely upload images.
+                </p>
+
+                <div class="tech-stack">
+                    <span>Flask</span>
+                    <span>SQLite</span>
+                    <span>Werkzeug</span>
+                </div>
+
+                <a href="https://github.com/surendramahla/flask-todo-app-with-image-upload" target="_blank"
+                    class="project-link">
+                    View on GitHub →
+                </a>
+            </div>
+
+
+            <!-- SQLite CRUD -->
+            <div class="project-card">
+                <i class="fas fa-database project-icon"></i>
+
+                <h3>SQLite CRUD Project</h3>
+
+                <p>
+                    Database-driven CRUD application demonstrating Create,
+                    Read, Update, and Delete operations using SQLite.
+                </p>
+
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>SQLite</span>
+                    <span>CRUD</span>
+                </div>
+
+                <a href="https://github.com/surendramahla/sqlite-crud-project" target="_blank" class="project-link">
+                    View on GitHub →
+                </a>
+            </div>
+
+
+            <!-- Car Sales Dashboard -->
+            <div class="project-card">
+                <i class="fas fa-chart-bar project-icon"></i>
+
+                <h3>Car Sales Analysis Dashboard</h3>
+
+                <p>
+                    Data analytics project tracking YTD, MTD, and YOY performance
+                    with interactive dashboards visualizing trends and KPIs.
+                </p>
+
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>Data Analysis</span>
+                </div>
+
+                <a href="https://github.com/surendramahla/Car-Sales-Analysis" target="_blank" class="project-link">
+                    View on GitHub →
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+    /* ===== SECTION BACKGROUND ===== */
+    .projects-section {
+        padding: 100px 0;
+        background: radial-gradient(circle at top right,
+                rgba(99, 102, 241, 0.15),
+                transparent 40%);
+    }
+
+    /* ===== HEADER ===== */
+    .projects-header {
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    .projects-title {
+        font-size: 2.6rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .projects-subtitle {
+        max-width: 600px;
+        margin: auto;
+        color: var(--text-secondary);
+        line-height: 1.6;
+    }
+
+    /* ===== GRID ===== */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 35px;
+    }
+
+    /* ===== CARD ===== */
+    .project-card {
+        padding: 30px;
+        border-radius: 18px;
+        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: 0.4s ease;
+        position: relative;
+    }
+
+    .project-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--accent);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ===== FEATURED CARD ===== */
+    .project-card.featured {
+        border: 1px solid var(--accent);
+    }
+
+    .featured-badge {
+        font-size: 0.7rem;
+        background: var(--accent);
+        padding: 4px 10px;
+        border-radius: 20px;
+        margin-right: 10px;
+    }
+
+    /* ===== ICON ===== */
+    .project-icon {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: var(--accent);
+    }
+
+    /* ===== TEXT ===== */
+    .project-card h3 {
+        margin-bottom: 12px;
+    }
+
+    .project-card p {
+        color: var(--text-secondary);
+        margin-bottom: 18px;
+        line-height: 1.6;
+    }
+
+    /* ===== TECH BADGES ===== */
+    .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .tech-stack span {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* ===== LINK ===== */
+    .project-link {
+        text-decoration: none;
+        font-size: 0.9rem;
+        color: var(--text-primary);
+    }
+
+    .project-link:hover {
+        color: var(--accent);
+    }
+</style>
+
+{% endblock %}
